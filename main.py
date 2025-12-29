@@ -3,11 +3,6 @@ import sys
 from stats import get_num_char, get_num_words, sort_characters
 
 
-def get_book_text():
-    with open("./books/frankenstein.txt", "r") as f:
-        return f.read()
-
-
 def main():
     if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")

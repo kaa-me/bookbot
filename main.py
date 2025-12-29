@@ -1,3 +1,5 @@
+import sys
+
 from stats import get_num_char, get_num_words, sort_characters
 
 
@@ -7,7 +9,14 @@ def get_book_text():
 
 
 def main():
-    book_text = get_book_text()
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    book_path = sys.argv[1]
+
+    with open(book_path, "r") as f:
+        book_text = f.read()
 
     get_num_words(book_text)
 
